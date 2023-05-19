@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="card bg-white p-4 mt-4" style="width: 75rem;">
+        <div class="card-body text-black">
+            <h1 class="card-title text-center py-3">Edit An Joueur</h1>
+        </div>
+        <form>
+            <div class="form-group">
+                <div>
+                    <label class="text-black">Joueur ID:</label>
+                    <input readonly type="text" [(ngModel)]="currentJoueur.idJoueur" name="idJoueur" class="form-control" style="width: 25rem;">
+                </div>
+                <div class="mt-2">
+                    <label class="text-black">Joueur Title:</label>
+                    <input type="text" [(ngModel)]="currentJoueur.title" name="title" class="form-control" style="width: 25rem;">
+                </div>
+                <div class="mt-2">
+                    <label class="text-black">nom joueur:</label>
+                    <input type="text" [(ngModel)]="currentJoueur.nomJoueur" name="nomJoueur" class="form-control" style="width: 25rem;">
+                </div>
+                <div class="mt-2">
+                    <label class="text-black">date inscreption:</label>
+                    <input type="date" [ngModel]="currentJoueur.dateInscrit | date: 'yyyy-MM-dd'"
+                    (ngModelChange)="currentJoueur.dateInscrit = $event" name="dateInscrit" class="form-control" style="width: 25rem;">
+                </div>
+                <div class="mt-2">
+                    <label class="text-black">prenom joueur:</label>
+                    <input type="text" [(ngModel)]="currentJoueur.prenomJoueur" name="prenomJoueur" class="form-control" style="width: 25rem;">
+                </div>
+                <div class="mt-2">
+                    <label class="text-black">Equipe:</label>
+                    <select class="form-control form-control-lg" id="idLab" name="idLab" [(ngModel)]="updatedEquipeId" style="width: 25rem;">
+                        <option *ngFor="let lab of equipes" [value]="lab.idEquipe">
+                            {{lab.equipeName}}
+                        </option>
+                    </select>
+                </div>
+
+
+                <div class="mt-5" style="margin-left: 500px;">
+                    <button type="submit" class="btn btn-info ml-3" (click)="updateJoueur()">Edit Joueur</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

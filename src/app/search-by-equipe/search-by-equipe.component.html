@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="col-sm-4 col-md-4 col-lg-4 mt-4">
+        <label>Equipes :</label>
+        <select class="form-control form-control-lg" name="idLab" id="idLab" [(ngModel)]="idEquipe" (change)="onChange()">
+            <option *ngFor="let lab of equipes" value="{{lab.idEquipe}}">
+                {{lab.equipeName}}
+            </option>
+        </select>
+    </div>
+    <div class="card shadow bg-light mt-4">
+        <div class="card-body">
+            <table class="table table-bordered mt-4">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Joueur Title</th>
+                        <th>Artist Name</th>
+                        <th>Release Date</th>
+                        <th>Genre</th>
+                        <th>Equipe</th>
+                    </tr>
+                </thead>
+
+                <tbody *ngFor="let joueur of joueurs">
+                    <tr>
+                        <td>{{joueur.idJoueur}}</td>
+                        <td>{{joueur.title}}</td>
+                        <td>{{joueur.nomJoueur}}</td>
+                        <td>{{joueur.dateInscrit | date:'yyyy/MM/dd'}}</td>
+                        <td>{{joueur.prenomJoueur}}</td>
+                        <td>{{joueur.equipe.equipeName}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

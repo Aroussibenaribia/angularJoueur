@@ -1,0 +1,23 @@
+<form>
+    <div [hidden]="ajout" class="mt-3">
+        <label>Equipe ID :</label>
+        <input readonly type="text" [(ngModel)]="equipe.idEquipe" [value]="equipe.idEquipe" name="idEquipe" class="form-control w-25">
+    </div>
+    <div class="mt-3">
+        <label>Equipe Name :</label>
+        <input type="text" [(ngModel)]="equipe.equipeName" [value]="equipe.equipeName" name="equipeName" class="form-control w-75">
+    </div>
+    <div class="mt-3">
+        <label>Equipe Founder :</label>
+        <input type="text" [(ngModel)]="equipe.equipeFounder" [value]="equipe.equipeFounder" name="equipeFounder" class="form-control w-75">
+    </div>
+    <div class="mt-3">
+        <label>Equipe Country :</label>
+        <input type="text" [(ngModel)]="equipe.equipeCountry" [value]="equipe.equipeCountry" name="equipeCountry" class="form-control w-75">
+    </div>
+    <div class="mt-2">
+        <button type="submit" [disabled]="!equipe.equipeName" class="btn btn-info" (click)="saveEquipe()">
+            {{ajout ? "Add" : "Update"}}
+        </button>
+    </div>
+</form>

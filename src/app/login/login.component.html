@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <div class="alert alert-danger" *ngIf="error === 1">
+                <strong>Invalid credentials...</strong>
+            </div>
+
+            <div class="card bg-white text-black" style="width: 25rem; position: relative; margin-top: 230px;">
+                <div class="card-body">
+                    <h3 class="card-title text-center py-3">Sign In</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" name="username" class="form-control" [(ngModel)]="user.username" placeholder="Enter Username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" name="password" [(ngModel)]="user.password" class="form-control" placeholder="••••••••">
+                        </div>
+
+                        <div class="row justify-content-center py-3">
+                            <button type="button" (click)="onLoggedIn()" class="btn btn-dark">Sign In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

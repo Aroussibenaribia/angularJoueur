@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="card bg-white text-black p-4 mt-4" style="max-width: 75rem;">
+        <div class="card-body">
+            <h1 class="card-title text-center py-3">Add a Joueur</h1>
+        </div>
+        <form>
+            <div class="form-group">
+                <div hidden>
+                    <label class="text-black">Joueur ID:</label>
+                    <input type="text" [(ngModel)]="newJoueur.idJoueur" name="idJoueur" class="form-control" style="width: 25rem;">
+                </div>
+                <div class="mt-4">
+                    <label class="text-black">Joueur Title:</label>
+                    <input type="text" [(ngModel)]="newJoueur.title" name="title" class="form-control" style="width: 25rem;">
+                </div>
+                <div class="mt-4">
+                    <label class="text-black">JOueur:</label>
+                    <input type="text" [(ngModel)]="newJoueur.nomJoueur" name="nomJoueur" class="form-control" style="width: 25rem;">
+                </div>
+                <div class="mt-4">
+                    <label class="text-black">date insecrit:</label>
+                    <input type="date" [(ngModel)]="newJoueur.dateInscrit" name="dateInscrit" class="form-control" style="width: 25rem;">
+                </div>
+                <div class="mt-4">
+                    <label class="text-black">prnom:</label>
+                    <input type="text" [(ngModel)]="newJoueur.prenomJoueur" name="prenomJoueur" class="form-control" style="width: 25rem;">
+                </div>
+                <div class="mt-4">
+                    <label class="text-black">Equipe:</label>
+                    <select class="form-control form-control-lg bg-light" id="idLab" name="idLab" [(ngModel)]="newEquipeId" style="width: 25rem;">
+                        <option *ngFor="let equipe of equipes" [value]="equipe.idEquipe">
+                            {{equipe.equipeName}}
+                        </option>
+                    </select>
+                </div>
+                <div class="mt-4">
+                    <label class="text-black">Image:</label>
+                    <input type="file" (change)="onImageUpload($event)" name="logo" class="form-control">
+                </div>
+                <div class="mt-5 text-center">
+                    <img [src]="imagePath" class="img-fluid" style="width: 500px; height: 300px;">
+                </div>
+                <div class="mt-5 text-center">
+                    <button type="submit" class="btn btn-secondary ml-3" (click)="addJoueur()">Add Joueur</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

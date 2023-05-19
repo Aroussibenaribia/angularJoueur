@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+        <app-update-equipe [equipe]="updatedLab" (equipeUpdated)="equipeUpdated($event)" [ajout]="ajout"></app-update-equipe>
+    </div>
+    <div class="card bg-light mt-4">
+        <div class="card-body">
+            <table class="table table-bordered table-hover mt-4">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Id:</th>
+                        <th>Equipe Name:</th>
+                        <th>Equipe Founder:</th>
+                        <th>Equipe Country:</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let lab of equipes">
+                    <tr>
+                        <td>{{lab.idEquipe}}</td>
+                        <td>{{lab.equipeName}}</td>
+                        <td>{{lab.equipeFounder}}</td>
+                        <td>{{lab.equipeCountry}}</td>
+                        <td><button class="btn btn-success" (click)="updateLab(lab)">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
